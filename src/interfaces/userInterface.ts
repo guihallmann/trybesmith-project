@@ -3,7 +3,7 @@ interface User {
   username: string;
   classe: string;
   level: number;
-  password: string;
+  password?: string | null;
 }
 
 export default User;
