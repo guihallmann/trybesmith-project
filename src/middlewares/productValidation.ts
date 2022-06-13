@@ -3,7 +3,12 @@ import joiProduct from '../joi/joiProduct';
 
 const productValidation = (req: Request, res: Response, next: NextFunction) => {
   const { error } = joiProduct.validate(req.body);
-  if (error) console.log(error.message);
+  if (error?.message.includes('must')) {
+    next({ status: 422, message: error.message });
+  }
+  if (error?.message.includes('is not')) {
+    next({ sttatus: 400, message: error.message });
+  }
   next();
 };
 
