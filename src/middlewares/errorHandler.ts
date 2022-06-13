@@ -1,4 +1,5 @@
 import { ErrorRequestHandler } from 'express';
+// https://stackoverflow.com/questions/50218878/typescript-express-error-function
 
 const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
   if (err.status) {
