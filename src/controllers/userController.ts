@@ -5,8 +5,9 @@ class UserController {
   constructor(private userService = new UserService()) {}
 
   public create = async (req: Request, res: Response) => {
-    const token = await this.userService.create(req.body);
-    return res.status(201).json(token);
+    const user = await this.userService.create(req.body);
+    const token = generetaJWT(user);
+    return res.status(201).json({ token });
   };
 }
 
