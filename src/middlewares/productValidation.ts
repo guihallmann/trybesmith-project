@@ -6,8 +6,8 @@ const productValidation = (req: Request, res: Response, next: NextFunction) => {
   if (error?.message.includes('must')) {
     next({ status: 422, message: error.message });
   }
-  if (error?.message.includes('is not')) {
-    next({ sttatus: 400, message: error.message });
+  if (error) {
+    next({ status: 400, message: error.message });
   }
   next();
 };
