@@ -1,7 +1,10 @@
 interface Order {
   id: number;
   userId: number;
+}
+
+interface OrderProducts extends Order{
   productsIds: number[];
 }
 
-export default Order;
+export { Order, OrderProducts };
