@@ -8,6 +8,7 @@ import OrderController from '../controllers/orderController';
 const router = Router();
 const Product = new ProductController();
 const User = new UserController();
+const Order = new OrderController();
 
 // Product Routes
 router.get('/products', Product.getAll);
